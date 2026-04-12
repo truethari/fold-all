@@ -2,8 +2,13 @@
   "name": "oneclickfold",
   "displayName": "OneClickFold",
   "description": "Fold and unfold all functions and methods in the current file with one click.",
-  "version": "0.1.0",
-  "publisher": "Tharindu N. Madhusankha",
+  "version": "1.0.0",
+  "publisher": "truethari",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/truethari/OneClickFold.git"
+  },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.115.0"
   },
