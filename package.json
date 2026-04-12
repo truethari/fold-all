@@ -1,0 +1,54 @@
+{
+  "name": "oneclickfold",
+  "displayName": "OneClickFold",
+  "description": "Fold and unfold all functions and methods in the current file with one click.",
+  "version": "0.1.0",
+  "publisher": "Tharindu N. Madhusankha",
+  "engines": {
+    "vscode": "^1.115.0"
+  },
+  "icon": "assets/icon.png",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "oneClickFold.toggleFold",
+        "title": "Toggle Fold Functions",
+        "icon": {
+          "light": "assets/fold-light.svg",
+          "dark": "assets/fold-dark.svg"
+        }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "oneClickFold.toggleFold",
+          "group": "navigation",
+          "when": "editorIsOpen"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "generate-icon": "bun run scripts/generate-icon.ts",
+    "build": "bun run build.ts",
+    "package": "bun run build.ts && vsce package --no-dependencies",
+    "watch": "bun run build.ts --watch",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/vscode": "^1.115.0",
+    "@vscode/vsce": "^3.7.1",
+    "esbuild": "^0.28.0",
+    "prettier": "^3.8.2",
+    "typescript": "^5.9.3"
+  }
+}
