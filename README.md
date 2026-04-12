@@ -2,6 +2,8 @@
 
 Fold and unfold all functions and methods in the current file with one click - directly from the editor title bar.
 
+Marketplace: [Fold All - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=truethari.foldall)
+
 ## Features
 
 - Adds a **fold icon** to the editor title bar
