@@ -1,12 +1,12 @@
 {
-  "name": "oneclickfold",
-  "displayName": "One Click Fold",
+  "name": "foldall",
+  "displayName": "Fold All",
   "description": "Fold and unfold all functions and methods in the current file with one click.",
   "version": "1.0.0",
   "publisher": "truethari",
   "repository": {
     "type": "git",
-    "url": "https://github.com/truethari/OneClickFold.git"
+    "url": "https://github.com/truethari/fold-all.git"
   },
   "license": "MIT",
   "engines": {
