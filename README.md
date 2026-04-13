@@ -2,9 +2,9 @@
 
 **Fold and unfold all functions and methods in the current file with one click - directly from the editor title bar.**
 
-[![VS Code Marketplace](https://img.shields.io/badge/VS%20Code-Marketplace-007ACC?logo=visualstudiocode&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=truethari.foldall)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/truethari/fold-all/blob/master/LICENSE)
-[![GitHub](https://img.shields.io/badge/GitHub-truethari%2Ffold--all-181717?logo=github&logoColor=white)](https://github.com/truethari/fold-all)
+<a href="https://marketplace.visualstudio.com/items?itemName=truethari.foldall" target="_blank"><img src="https://img.shields.io/badge/VS%20Code-Marketplace-007ACC?logo=visualstudiocode&logoColor=white" alt="VS Code Marketplace"/></a>
+<a href="https://github.com/truethari/fold-all/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"/></a>
+<a href="https://github.com/truethari/fold-all" target="_blank"><img src="https://img.shields.io/badge/GitHub-truethari%2Ffold--all-181717?logo=github&logoColor=white" alt="GitHub"/></a>
 
 ---
 
@@ -61,7 +61,7 @@ TypeScript &nbsp;·&nbsp; JavaScript &nbsp;·&nbsp; Python &nbsp;·&nbsp; Go &nb
 
 Contributions are welcome! To get started:
 
-1. Fork the [repository](https://github.com/truethari/fold-all)
+1. Fork the <a href="https://github.com/truethari/fold-all" target="_blank">repository</a>
 2. Clone your fork and install dependencies
    ```bash
    git clone https://github.com/your-username/fold-all.git
@@ -88,4 +88,4 @@ Contributions are welcome! To get started:
 
 ## License
 
-[MIT](https://github.com/truethari/fold-all/blob/main/LICENSE) © [Tharindu N. Madhusankha](https://github.com/truethari)
+<a href="https://github.com/truethari/fold-all/blob/master/LICENSE" target="_blank">MIT</a> © <a href="https://github.com/truethari" target="_blank">Tharindu N. Madhusankha</a>
