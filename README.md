@@ -1,9 +1,9 @@
 # Fold All
 
-**Fold and unfold all functions and methods in the current file with one click — directly from the editor title bar.**
+**Fold and unfold all functions and methods in the current file with one click - directly from the editor title bar.**
 
 [![VS Code Marketplace](https://img.shields.io/badge/VS%20Code-Marketplace-007ACC?logo=visualstudiocode&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=truethari.foldall)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/truethari/fold-all/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/truethari/fold-all/blob/master/LICENSE)
 [![GitHub](https://img.shields.io/badge/GitHub-truethari%2Ffold--all-181717?logo=github&logoColor=white)](https://github.com/truethari/fold-all)
 
 ---
@@ -73,7 +73,15 @@ Contributions are welcome! To get started:
    ```bash
    bun run build
    ```
-5. Press `F5` in VS Code to launch an Extension Development Host and test
+5. Run or Install the Extension
+   Press F5 in Visual Studio Code to launch an Extension Development Host and test your extension.
+
+   OR
+   - Open the Extensions view in VS Code
+   - Click the ... (More Actions) menu
+   - Select "Install from VSIX..."
+   - Choose your .vsix file to install the extension manually
+
 6. Open a Pull Request against the `main` branch
 
 ---
