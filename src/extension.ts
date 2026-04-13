@@ -23,9 +23,10 @@ export function activate(context: vscode.ExtensionContext) {
       vscode.SymbolKind.Function,
       vscode.SymbolKind.Method,
       vscode.SymbolKind.Constructor,
+      vscode.SymbolKind.Interface,
     ]);
 
-    const functionRanges = collectFunctionRanges(symbols, functionKinds, editor.document);
+    const functionRanges = collectFunctionRanges(symbols, functionKinds);
 
     if (functionRanges.length === 0) {
       vscode.window.showInformationMessage("No functions or methods found in this document.");
@@ -51,29 +52,25 @@ export function activate(context: vscode.ExtensionContext) {
   );
 }
 
-const ARROW_FUNCTION_RE = /=>|=\s*(async\s*)?\(/;
-
-function isArrowFunction(symbol: vscode.DocumentSymbol, document: vscode.TextDocument): boolean {
-  if (symbol.kind !== vscode.SymbolKind.Variable) {
-    return false;
-  }
-  const declarationLine = document.lineAt(symbol.range.start.line).text;
-  return ARROW_FUNCTION_RE.test(declarationLine);
+// Fold any Variable symbol that spans multiple lines (arrow functions, object literals, etc.)
+function isFoldableVariable(symbol: vscode.DocumentSymbol): boolean {
+  return (
+    symbol.kind === vscode.SymbolKind.Variable && symbol.range.end.line > symbol.range.start.line
+  );
 }
 
 function collectFunctionRanges(
   symbols: vscode.DocumentSymbol[],
-  functionKinds: Set<vscode.SymbolKind>,
-  document: vscode.TextDocument
+  functionKinds: Set<vscode.SymbolKind>
 ): vscode.Range[] {
   const ranges: vscode.Range[] = [];
 
   for (const symbol of symbols) {
-    if (functionKinds.has(symbol.kind) || isArrowFunction(symbol, document)) {
+    if (functionKinds.has(symbol.kind) || isFoldableVariable(symbol)) {
       ranges.push(symbol.range);
     }
     if (symbol.children && symbol.children.length > 0) {
-      ranges.push(...collectFunctionRanges(symbol.children, functionKinds, document));
+      ranges.push(...collectFunctionRanges(symbol.children, functionKinds));
     }
   }
 
