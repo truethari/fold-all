@@ -8,7 +8,7 @@
 
 ---
 
-<img src="https://raw.githubusercontent.com/truethari/fold-all/main/assets/sample.gif" alt="Fold All in action" width="700"/>
+<img src="https://raw.githubusercontent.com/truethari/fold-all/refs/heads/master/assets/sample.gif" alt="Fold All in action" width="800"/>
 
 ---
 

@@ -2,7 +2,7 @@
   "name": "foldall",
   "displayName": "Fold All",
   "description": "Fold and unfold all functions and methods in the current file with one click.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "truethari",
   "repository": {
     "type": "git",
