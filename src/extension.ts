@@ -23,10 +23,9 @@ export function activate(context: vscode.ExtensionContext) {
       vscode.SymbolKind.Function,
       vscode.SymbolKind.Method,
       vscode.SymbolKind.Constructor,
-      vscode.SymbolKind.ArrowFunction,
     ]);
 
-    const functionRanges = collectFunctionRanges(symbols, functionKinds);
+    const functionRanges = collectFunctionRanges(symbols, functionKinds, editor.document);
 
     if (functionRanges.length === 0) {
       vscode.window.showInformationMessage("No functions or methods found in this document.");
@@ -52,18 +51,29 @@ export function activate(context: vscode.ExtensionContext) {
   );
 }
 
+const ARROW_FUNCTION_RE = /=>|=\s*(async\s*)?\(/;
+
+function isArrowFunction(symbol: vscode.DocumentSymbol, document: vscode.TextDocument): boolean {
+  if (symbol.kind !== vscode.SymbolKind.Variable) {
+    return false;
+  }
+  const declarationLine = document.lineAt(symbol.range.start.line).text;
+  return ARROW_FUNCTION_RE.test(declarationLine);
+}
+
 function collectFunctionRanges(
   symbols: vscode.DocumentSymbol[],
-  functionKinds: Set<vscode.SymbolKind>
+  functionKinds: Set<vscode.SymbolKind>,
+  document: vscode.TextDocument
 ): vscode.Range[] {
   const ranges: vscode.Range[] = [];
 
   for (const symbol of symbols) {
-    if (functionKinds.has(symbol.kind)) {
+    if (functionKinds.has(symbol.kind) || isArrowFunction(symbol, document)) {
       ranges.push(symbol.range);
     }
     if (symbol.children && symbol.children.length > 0) {
-      ranges.push(...collectFunctionRanges(symbol.children, functionKinds));
+      ranges.push(...collectFunctionRanges(symbol.children, functionKinds, document));
     }
   }
 
